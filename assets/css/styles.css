@@ -1,0 +1,101 @@
+:root {
+    --primary: #ff5a5f;    /* Un rojo coral tipo Airbnb */
+    --bg-gradient: linear-gradient(135deg, #1e1e26 0%, #111116 100%); /* Fondo oscuro profundo */
+    --card-bg: #2a2a35;    /* Gris azulado oscuro */
+    --text-main: #ffffff;
+    --text-muted: #a0a0b0;
+    --border: #3f3f4e;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.container {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+
+h1 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--text-main); }
+p { text-align: left; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 5px; }
+
+input, select {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 1. Definimos la animación de entrada */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(5px); /* Pequeño efecto de subida */
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+button {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    
+    /* 2. Aplicamos la animación de entrada aquí (solo una vez) */
+    animation: fadeIn 0.8s ease-out forwards;
+    
+    /* 3. Preparamos el botón para cambios suaves de color */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* 4. El Hover debe cambiar el color, NO disparar la animación de nuevo */
+button:hover {
+    background: #e04e4e; 
+    transform: scale(1.02); /* Crece un poquito, se ve muy Pro */
+}
+
+button:active {
+    transform: scale(0.98); /* Se hunde un poco al hacer clic */
+}
+
+
+#resultado {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f0fdf4;
+    color: #000703;
+    border-radius: 12px;
+}
+
+.chart-container { margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1rem; }
